@@ -1,0 +1,112 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MainPage());
+
+class MainPage extends StatelessWidget {
+  const MainPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Custom Card Example",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.indigo,
+      ),
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.green, Colors.yellow],
+                begin: AlignmentDirectional.centerStart,
+                end: AlignmentDirectional.bottomEnd,
+              ),
+            ),
+          ),
+          Center(
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: MediaQuery.of(context).size.height * 0.7,
+              child: Card(
+                child: Stack(
+                  children: [
+                    Opacity(
+                      opacity: 0.7,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          // image: DecorationImage(
+                          //   image: NetworkImage(),
+                          //   fit: BoxFit.cover,
+                          // ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.35,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(4),
+                          topRight: Radius.circular(4),
+                        ),
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                "https://4.bp.blogspot.com/-JKsI15YxJfQ/UQKaWpVgiLI/AAAAAAAARkI/M_o7kS7rx5Y/s1600/Lonely+Tree+Paography+Wallpapers+02.jpg"),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(
+                          20,
+                          50 + MediaQuery.of(context).size.height * 0.35,
+                          20,
+                          20),
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Text(
+                              "Hello World Lorem Ipsum 1234567890",
+                              maxLines: 2,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 85, 113, 83),
+                                  fontSize: 25),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(0, 20, 0, 15),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Posted on ",
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 12),
+                                  ),
+                                  Text(
+                                    "June 18, 2011",
+                                    style: TextStyle(
+                                        color: Color.fromARGB(255, 85, 113, 83),
+                                        fontSize: 12),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                shadowColor: Colors.black,
+                elevation: 10,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
