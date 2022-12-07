@@ -93,6 +93,43 @@ class MainPage extends StatelessWidget {
                                   ),
                                 ],
                               ),
+                            ),
+                            Row(
+                              children: [
+                                Spacer(
+                                  flex: 10,
+                                ),
+                                Icon(
+                                  Icons.thumb_up,
+                                  size: 18,
+                                  color: Colors.grey,
+                                ),
+                                Spacer(
+                                  flex: 1,
+                                ),
+                                Text(
+                                  "99",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                Spacer(
+                                  flex: 5,
+                                ),
+                                Icon(
+                                  Icons.comment,
+                                  size: 18,
+                                  color: Colors.grey,
+                                ),
+                                Spacer(
+                                  flex: 1,
+                                ),
+                                Text(
+                                  "888",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                Spacer(
+                                  flex: 10,
+                                ),
+                              ],
                             )
                           ],
                         ),
